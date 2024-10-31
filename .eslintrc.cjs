@@ -4,9 +4,6 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:prettier/recommended',
-    // This disables the formatting rules in ESLint that Prettier is going to be responsible for handling.
-    // Make sure it's always the last config, so it gets the chance to override other configs.
     'eslint-config-prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
@@ -18,6 +15,10 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    'import/newline-after-import': ['error', { count: 1 }],
+    'prettier/prettier': 'warn',
+    'no-console': 'off', // Отключить правило, запрещающее использование console
+    'no-unused-vars': 'warn', // Изменить на предупреждение вместо ошибки
+    'react/jsx-no-target-blank': 'off', // Отключить правило для использования target="_blank"
+    'react/react-in-jsx-scope': 'off',
   },
 };
